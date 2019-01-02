@@ -18,4 +18,4 @@ elif [ ! -f "/config/$CRED_JSON" ]; then
     exit 1
 fi
 
-exec python3 /hassio_gassistant.py --credentials "$CRED_JSON" --project-id "$PROJECT_ID" --device-model-id "$DEVICE_MODEL_ID" < /dev/null
+exec python3 /hassio_gassistant.py --credentials "/config/$CRED_JSON" --project-id "$PROJECT_ID" --device-model-id "$DEVICE_MODEL_ID" < /dev/null
