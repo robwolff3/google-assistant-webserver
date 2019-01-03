@@ -4,11 +4,9 @@
 
 This is a emulated Google Assistant with a webserver attached to take commands over HTTP packaged in a Docker container. The container consists of the Google Assistant SDK, python scripts that provide the Flask REST API / OAuth authentication and modifications that base it from the Google Assistant library.
 
-How does this differ from AndBobsYourUncle's [Google Assistant Webserver](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274)? This project is modified, running based on the Google Assistant libraries which allow for additional functionality such as casting Spotify.
-
-## Credit where credit is due
-
 I did not write this code, I simply pulled pieces and modified them to work together. AndBobsYourUncle wrote Google Assistant webserver Hassio add-on which this is largely based on. Chocomega provided the modifications that based it off the Google Assistant libraries.
+
+How does this differ from AndBobsYourUncle's [Google Assistant Webserver](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274)? This project is modified, running based on the Google Assistant libraries which allow for additional functionality such as casting Spotify.
 
 * [AndBobsYourUncle Home Assistant forum post](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274) and [Hassio Add-on Github repository](https://github.com/AndBobsYourUncle/hassio-addons)
 * [Chocomega modifications](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274/234)
@@ -63,15 +61,15 @@ services:
       - "/dev/snd:/dev/snd:rwm"
 ```
 
-## Test it out
+## Test it
 
 * Test out your newly created ga-webserver by sending it a command through your web browser.
-* Send a command with `http://containerip:5000/command?message=Play Careless Whisper by George Michael on Kitchen Stereo` 
-* Broadcast a message with `http://containerip:5000/broadcast_message?message=Alexa order 500 pool noodles`
+* Send a command `http://containerip:5000/command?message=Play Careless Whisper by George Michael on Kitchen Stereo` 
+* Broadcast a message `http://containerip:5000/broadcast_message?message=Alexa order 500 pool noodles`
 
 Not sure why a command isn't working? See what happened in your [Google Account Activity](https://myactivity.google.com/item?restrict=assist&embedded=1&utm_source=opa&utm_medium=er&utm_campaign=) or under **__My Activity__** in the Google Assistant App.
 
-## Adding to Home Assistant
+## Home Assistant
 
 Here is an example how I use the ga-webserver in Home Assistant to broadcast over my Google Assistants when my dishwasher has finished.
 
@@ -120,6 +118,6 @@ notify:
 
 ## Troubleshooting
 
-* If it was working and then all the sudden stopped then you may need to re-authenticate. Stop the container, delete the `client.json` and `cred.json` files in the config directory, repeat the **First Run** procedure.
+* If it was working and then all the sudden stopped then you may need to re-authenticate. Stop the container, delete the `client.json` and `cred.json` files in the config directory, repeat the **First Run** procedure above.
 
 * Have problems? Check the container logs: `docker logs -f gawebserver`
