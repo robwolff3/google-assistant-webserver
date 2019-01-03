@@ -21,7 +21,7 @@ How does this differ from AndBobsYourUncle's [Google Assistant Webserver](https:
 
 ## First Run
 
-* Start the container using Docker run or Docker Compose. It will start listening on ports 9324 and 5000. Browse to the container on port 9324 (`http://containerip:9324`) where you will see **_Get token from google: Authentication_**. 
+* Start the container using Docker Run or Docker Compose. It will start listening on ports 9324 and 5000. Browse to the container on port 9324 (`http://containerip:9324`) where you will see **_Get token from google: Authentication_**. 
 * Follow the URL, authenticate with Google, return the string from Google to the container web page and click connect. The page will error out and that is normal, the container is now up and running.
 
 ### Docker Run
@@ -100,11 +100,11 @@ notify:
           message: "The Dishwasher has finished."
 ```
 
-[My full Home Assistant Configuration repository](https://github.com/robwolff3/homeassistant-config).
+[My Home Assistant Configuration repository](https://github.com/robwolff3/homeassistant-config).
 
 ## Troubleshooting
 
-* Broadcast messages not working? You may need to set an address on the ga-webserver the same as the address's registered with your other Google Assistant devices. I the Google Assistant app go to **_More > Settings > Settings > Assistant_**. At the bottom select your ga-webserver and set the applicable address.
+* Broadcast messages not working? You may need to set an address on the ga-webserver the same as the address's registered with your other Google Assistant devices. In the Google Assistant app go to **_More > Settings > Settings > Assistant_**. At the bottom select your ga-webserver and set the applicable address.
 
 * If it was working and then all the sudden stopped then you may need to re-authenticate. Stop the container, delete the `access_token.json` file from the configuration directory, repeat the **First Run** procedure above.
 
