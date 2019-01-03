@@ -16,8 +16,8 @@ How does this differ from AndBobsYourUncle's [Google Assistant Webserver](https:
 
 1. Go the **_Configure a Developer Project and Account Settings_** page of the **_Embed the Google Assistant_** procedure in the [Library docs](https://developers.google.com/assistant/sdk/guides/library/python/embed/config-dev-project-and-account).
 2. Follow the steps through to **_Register the Device Model_** and take note of the project id and the device model id.
-3. Download the credentials file and move it to the config directory `/home/user/docker/config/gawebserver/`. Rename the credentials file to `google_assistant.json` or change the environment variable for `CLIENT_SECRETS` in your Docker config.
-4. Fill out the `DEVICE_MODEL_ID` and `PROJECT_ID` environment variables in the Docker config with what you used in the previous steps and set your config directory.
+3. **_Download OAuth 2.0 Credentials_** file, rename it to `client_secret.json` and move it to the configuration directory `/home/user/docker/config/gawebserver`.
+4. In a Docker configuration below, fill out the `DEVICE_MODEL_ID` and `PROJECT_ID` environment variables with the values from previous steps. Lastly change the volume to mount your configuration directory to `/config`.
 
 ## First Run
 
@@ -32,7 +32,7 @@ $ docker run -d --name=gawebserver \
     -v /home/user/docker/config/gawebserver:/config \
     -p 9324:9324 \
     -p 5000:5000 \
-    -e CLIENT_SECRETS="google_assistant.json" \
+    -e CLIENT_SECRET="client_secret.json" \
     -e DEVICE_MODEL_ID=device_model_id \
     -e PROJECT_ID=project_id \
     --device /dev/snd:/dev/snd:rwm \
@@ -54,7 +54,7 @@ services:
       - 9324:9324
       - 5000:5000
     environment:
-      - CLIENT_SECRETS="google_assistant.json"
+      - CLIENT_SECRET="client_secret.json"
       - DEVICE_MODEL_ID=device_model_id
       - PROJECT_ID=project_id
     devices:
@@ -118,6 +118,6 @@ notify:
 
 ## Troubleshooting
 
-* If it was working and then all the sudden stopped then you may need to re-authenticate. Stop the container, delete the `client.json` and `cred.json` files in the config directory, repeat the **First Run** procedure above.
+* If it was working and then all the sudden stopped then you may need to re-authenticate. Stop the container, delete the `access_token.json` files in the configuration directory, repeat the **First Run** procedure above.
 
 * Have problems? Check the container logs: `docker logs -f gawebserver`
