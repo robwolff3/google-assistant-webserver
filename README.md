@@ -118,6 +118,6 @@ notify:
 
 ## Troubleshooting
 
-* If it was working and then all the sudden stopped then you may need to re-authenticate. Stop the container, delete the `access_token.json` files in the configuration directory, repeat the **First Run** procedure above.
+* If it was working and then all the sudden stopped then you may need to re-authenticate. Stop the container, delete the `access_token.json` file from the configuration directory, repeat the **First Run** procedure above.
 
 * Have problems? Check the container logs: `docker logs -f gawebserver`
