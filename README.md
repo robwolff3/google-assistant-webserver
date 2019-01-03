@@ -73,7 +73,7 @@ Not sure why a command isn't working? See what happened in your [Google Account 
 
 Here is an example how I use the ga-webserver in Home Assistant to broadcast over my Google Assistants when my dishwasher has finished.
 
-### configuration.yaml
+#### configuration.yaml
 
 ```yml
 notify:
@@ -85,7 +85,7 @@ notify:
     resource: http://containerip:5000/command
 ```
 
-### automations.yaml
+#### automations.yaml
 
 ```yml
   - alias: Broadcast the dishwasher has finished
