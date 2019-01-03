@@ -104,6 +104,8 @@ notify:
 
 ## Troubleshooting
 
+* Broadcast messages not working? You may need to set an address on the ga-webserver the same as the address's registered with your other Google Assistant devices. I the Google Assistant app go to **_More > Settings > Settings > Assistant_**. At the bottom select your ga-webserver and set the applicable address.
+
 * If it was working and then all the sudden stopped then you may need to re-authenticate. Stop the container, delete the `access_token.json` file from the configuration directory, repeat the **First Run** procedure above.
 
 * Have problems? Check the container logs: `docker logs -f gawebserver`
