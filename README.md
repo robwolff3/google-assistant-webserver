@@ -6,7 +6,7 @@ This is a emulated Google Assistant with a webserver attached to take commands o
 
 I did not write this code, I simply pulled pieces and modified them to work together. AndBobsYourUncle wrote Google Assistant webserver Hassio add-on which this is largely based on. Chocomega provided the modifications that based it off the Google Assistant libraries.
 
-How does this differ from AndBobsYourUncle's [Google Assistant Webserver](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274)? This project is modified, running based on the Google Assistant libraries which allow for additional functionality such as casting Spotify.
+How does this differ from AndBobsYourUncle's [Google Assistant Webserver](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274)? This project is modified, running based on the Google Assistant libraries not the Google Assistant Service which allows for additional functionality such as remote media casting (Casting Spotify). [See the table here](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274/343)
 
 * [AndBobsYourUncle Home Assistant forum post](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274) and [Hassio Add-on Github repository](https://github.com/AndBobsYourUncle/hassio-addons)
 * [Chocomega modifications](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274/234)
@@ -22,7 +22,7 @@ How does this differ from AndBobsYourUncle's [Google Assistant Webserver](https:
 ## First Run
 
 * Start the container using Docker run or Docker Compose. It will start listening on ports 9324 and 5000. Browse to the container on port 9324 (`http://containerip:9324`) where you will see **_Get token from google: Authentication_**. 
-* Follow the URL, authenticate with Google, return the string from Google to the container web page and click submit. The page will error out and that is normal, the container is now up and running.
+* Follow the URL, authenticate with Google, return the string from Google to the container web page and click connect. The page will error out and that is normal, the container is now up and running.
 
 ### Docker Run
 
@@ -32,7 +32,7 @@ $ docker run -d --name=gawebserver \
     -v /home/user/docker/config/gawebserver:/config \
     -p 9324:9324 \
     -p 5000:5000 \
-    -e CLIENT_SECRET="client_secret.json" \
+    -e CLIENT_SECRET=client_secret.json \
     -e DEVICE_MODEL_ID=device_model_id \
     -e PROJECT_ID=project_id \
     --device /dev/snd:/dev/snd:rwm \
@@ -54,7 +54,7 @@ services:
       - 9324:9324
       - 5000:5000
     environment:
-      - CLIENT_SECRET="client_secret.json"
+      - CLIENT_SECRET=client_secret.json
       - DEVICE_MODEL_ID=device_model_id
       - PROJECT_ID=project_id
     devices:
