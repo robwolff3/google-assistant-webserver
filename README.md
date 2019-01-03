@@ -88,26 +88,12 @@ notify:
 ### automations.yaml
 
 ```yml
-  - alias: Say alert when dishwasher is done
+  - alias: Broadcast the dishwasher has finished
     initial_state: True
     trigger:
       - platform: state
         entity_id: input_select.dishwasher_status
         to: 'Off'
-    condition:
-      condition: and
-      conditions:
-        - condition: time
-          after: '08:00:00'
-          before: '20:00:00'
-        - condition: or
-          conditions:
-            - condition: state
-              entity_id: binary_sensor.user1_occupancy
-              state: 'on'
-            - condition: state
-              entity_id: binary_sensor.user2_occupancy
-              state: 'on'
     action:
       - service: notify.ga_broadcast
         data:
