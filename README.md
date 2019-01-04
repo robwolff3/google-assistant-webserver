@@ -6,7 +6,7 @@ This is a emulated Google Assistant with a webserver attached to take commands o
 
 I did not write this code, I simply pulled pieces and modified them to work together. AndBobsYourUncle wrote Google Assistant webserver Hassio add-on which this is largely based on. Chocomega provided the modifications that based it off the Google Assistant libraries.
 
-How does this differ from AndBobsYourUncle's [Google Assistant Webserver](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274)? This project is modified, running based on the Google Assistant libraries not the Google Assistant Service which allows for additional functionality such as remote media casting (Casting Spotify). [See the table here](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274/343)
+How does this differ from AndBobsYourUncle's [Google Assistant Webserver](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274)? This project is modified, running based on the Google Assistant libraries not the Google Assistant Service which allows for additional functionality such as remote media casting (Casting Spotify) [See the table here](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274/343). However this method requires a mic and speaker audio device on the host machine.
 
 * [AndBobsYourUncle Home Assistant forum post](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274) and [Hassio Add-on Github repository](https://github.com/AndBobsYourUncle/hassio-addons)
 * [Chocomega modifications](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274/234)
@@ -14,6 +14,7 @@ How does this differ from AndBobsYourUncle's [Google Assistant Webserver](https:
 
 ## Setup
 
+* Prerequisite - Mic and speaker audio devices configured on the host machine. If you're not sure or need help you can follow [Googles Configure and Test the Audio documentation here](https://developers.google.com/assistant/sdk/guides/library/python/embed/audio?hardware=ubuntu).
 1. Go the **_Configure a Developer Project and Account Settings_** page of the **_Embed the Google Assistant_** procedure in the [Library docs](https://developers.google.com/assistant/sdk/guides/library/python/embed/config-dev-project-and-account).
 2. Follow the steps through to **_Register the Device Model_** and take note of the project id and the device model id.
 3. **_Download OAuth 2.0 Credentials_** file, rename it to `client_secret.json` and move it to the configuration directory `/home/user/docker/config/gawebserver`.
