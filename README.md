@@ -14,7 +14,7 @@ How does this differ from AndBobsYourUncle's [Google Assistant Webserver](https:
 
 ## Setup
 
-* Prerequisite - Mic and speaker audio devices configured on the host machine. If you're not sure or need help you can follow [Googles Configure and Test the Audio documentation here](https://developers.google.com/assistant/sdk/guides/library/python/embed/audio?hardware=ubuntu).
+* Prerequisite - Mic and speaker audio device configured on the host machine. If you're not sure or need help you can follow [Googles Configure and Test the Audio documentation](https://developers.google.com/assistant/sdk/guides/library/python/embed/audio?hardware=ubuntu).
 1. Go the **_Configure a Developer Project and Account Settings_** page of the **_Embed the Google Assistant_** procedure in the [Library docs](https://developers.google.com/assistant/sdk/guides/library/python/embed/config-dev-project-and-account).
 2. Follow the steps through to **_Register the Device Model_** and take note of the project id and the device model id.
 3. **_Download OAuth 2.0 Credentials_** file, rename it to `client_secret.json` and move it to the configuration directory `/home/user/docker/config/gawebserver`.
