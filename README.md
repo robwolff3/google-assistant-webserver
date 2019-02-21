@@ -12,6 +12,8 @@ How does this differ from AndBobsYourUncle's [Google Assistant Webserver](https:
 * [Chocomega modifications](https://community.home-assistant.io/t/community-hass-io-add-on-google-assistant-webserver-broadcast-messages-without-interrupting-music/37274/234)
 * [Google Assistant Library docs](https://developers.google.com/assistant/sdk/guides/library/python/)
 
+Interested in [Docker](https://www.docker.com/) but never used it before? Checkout my blog post: [Docker In Your HomeLab - Getting Started](https://borked.io/2019/02/13/docker-in-your-homelab.html).
+
 ## Setup
 
 * Prerequisite - Mic and speaker audio device configured on the host machine. If you're not sure or need help you can follow [Googles Configure and Test the Audio documentation](https://developers.google.com/assistant/sdk/guides/library/python/embed/audio?hardware=ubuntu).
