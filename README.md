@@ -41,6 +41,7 @@ $ docker run -d --name=gawebserver \
     -e CLIENT_SECRET=client_secret.json \
     -e DEVICE_MODEL_ID=device_model_id \
     -e PROJECT_ID=project_id \
+    -e PYTHONIOENCODING=utf-8 \
     --device /dev/snd:/dev/snd:rwm \
     robwolff3/ga-webserver
 ```
@@ -64,6 +65,7 @@ services:
       - CLIENT_SECRET=client_secret.json
       - DEVICE_MODEL_ID=device_model_id
       - PROJECT_ID=project_id
+      - PYTHONIOENCODING=utf-8
     devices:
       - "/dev/snd:/dev/snd:rwm"
 ```
