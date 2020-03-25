@@ -1,5 +1,15 @@
 # Google Assistant Webserver in a Docker container
 
+### March 25th 2020 - Update
+
+I had issues with my project and starting fresh seemed to fix it.
+
+- Pull the new container image version
+- Recreate the Google Actions Project following googles new documentation https://developers.google.com/assistant/sdk/guides/service/python
+- Once setup, authenticated and showing up in Google Assistant settings on my phone I had to join the new device to my home in the Google Home app. Then it picked up on my Device Address for broadcasts.
+
+-------------------------------------------------
+
 ## What is this?
 
 This is a emulated Google Assistant with a webserver attached to take commands over HTTP packaged in a Docker container. The container consists of the Google Assistant SDK, python scripts that provide the Flask REST API / OAuth authentication and modifications that base it from the Google Assistant library.
