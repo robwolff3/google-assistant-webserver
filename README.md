@@ -1,3 +1,7 @@
+This repository is no longer matained. Use at your own risk.
+
+---
+
 # Google Assistant Webserver in a Docker container
 
 ### March 25th 2020 - Update
